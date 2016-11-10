@@ -3,4 +3,5 @@
     <string name="start">Start</string>
     <string name="pause">Pause</string>
     <string name="stop">Stop</string>
+    <string name="text_size">60dp</string>
 </resources>

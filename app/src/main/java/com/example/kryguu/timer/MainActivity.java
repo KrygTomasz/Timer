@@ -3,6 +3,7 @@ package com.example.kryguu.timer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -10,20 +11,20 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.textViewMinute1) TextView textViewMinute1;
-    @BindView(R.id.textViewMinute2) TextView textViewMinute2;
-    @BindView(R.id.textViewSecond1) TextView textViewSecond1;
-    @BindView(R.id.textViewSecond2) TextView textViewSecond2;
-    @BindView(R.id.buttonPlusMinute1) Button buttonPlusMinute1;
-    @BindView(R.id.buttonPlusMinute2) Button buttonPlusMinute2;
-    @BindView(R.id.buttonPlusSecond1) Button buttonPlusSecond1;
-    @BindView(R.id.buttonPlusSecond2) Button buttonPlusSecond2;
-    @BindView(R.id.buttonMinusMinute1) Button buttonMinusMinute1;
-    @BindView(R.id.buttonMinusMinute2) Button buttonMinusMinute2;
-    @BindView(R.id.buttonMinusSecond1) Button buttonMinusSecond1;
-    @BindView(R.id.buttonMinusSecond2) Button buttonMinusSecond2;
+    @BindView(R.id.textViewMinuteOne) TextView textViewMinuteOne;
+    @BindView(R.id.textViewMinuteTen) TextView textViewMinuteTen;
+    @BindView(R.id.textViewSecondOne) TextView textViewSecondOne;
+    @BindView(R.id.textViewSecondTen) TextView textViewSecondTen;
+    @BindView(R.id.buttonPlusMinuteOne) Button buttonPlusMinuteOne;
+    @BindView(R.id.buttonPlusMinuteTen) Button buttonPlusMinuteTen;
+    @BindView(R.id.buttonPlusSecondOne) Button buttonPlusSecondOne;
+    @BindView(R.id.buttonPlusSecondTen) Button buttonPlusSecondTen;
+    @BindView(R.id.buttonMinusMinuteOne) Button buttonMinusMinuteOne;
+    @BindView(R.id.buttonMinusMinuteTen) Button buttonMinusMinuteTen;
+    @BindView(R.id.buttonMinusSecondOne) Button buttonMinusSecondOne;
+    @BindView(R.id.buttonMinusSecondTen) Button buttonMinusSecondTen;
     @BindView(R.id.buttonStart) Button buttonStart;
     @BindView(R.id.buttonPause) Button buttonPause;
     @BindView(R.id.buttonStop) Button buttonStop;
@@ -38,92 +39,88 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.buttonPlusMinute1)
+    @OnClick(R.id.buttonPlusMinuteOne)
     public void onButtonPlusMinute1Click() {
-        String digitStr = textViewMinute1.getText().toString();
+        String digitStr = textViewMinuteOne.getText().toString();
         int digit = Integer.parseInt(digitStr);
         digit++;
-        digit%=6;
-        textViewMinute1.setText(Integer.toString(digit));
+        digit%=10;
+        textViewMinuteOne.setText(Integer.toString(digit));
     }
 
-    @OnClick(R.id.buttonPlusMinute2)
+    @OnClick(R.id.buttonPlusMinuteTen)
     public void onButtonPlusMinute2Click() {
-        String digitStr = textViewMinute2.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit++;
-        digit%=10;
-        textViewMinute2.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonPlusSecond1)
-    public void onButtonPlusSecond1Click() {
-        String digitStr = textViewSecond1.getText().toString();
+        String digitStr = textViewMinuteTen.getText().toString();
         int digit = Integer.parseInt(digitStr);
         digit++;
         digit%=6;
-        textViewSecond1.setText(Integer.toString(digit));
+        textViewMinuteTen.setText(Integer.toString(digit));
     }
 
-    @OnClick(R.id.buttonPlusSecond2)
-    public void onButtonPlusSecond2Click() {
-        String digitStr = textViewSecond2.getText().toString();
+    @OnClick(R.id.buttonPlusSecondOne)
+    public void onButtonPlusSecond1Click() {
+        String digitStr = textViewSecondOne.getText().toString();
         int digit = Integer.parseInt(digitStr);
         digit++;
         digit%=10;
-        textViewSecond2.setText(Integer.toString(digit));
+        textViewSecondOne.setText(Integer.toString(digit));
     }
 
+    @OnClick(R.id.buttonPlusSecondTen)
+    public void onButtonPlusSecond2Click() {
+        String digitStr = textViewSecondTen.getText().toString();
+        int digit = Integer.parseInt(digitStr);
+        digit++;
+        digit%=6;
+        textViewSecondTen.setText(Integer.toString(digit));
+    }
 
-
-
-
-    @OnClick(R.id.buttonMinusMinute1)
+    @OnClick(R.id.buttonMinusMinuteOne)
     public void onButtonMinusMinute1Click() {
-        String digitStr = textViewMinute1.getText().toString();
+        String digitStr = textViewMinuteOne.getText().toString();
         int digit = Integer.parseInt(digitStr);
         digit--;
-        if (digit<0) digit = 6+digit;
-        textViewMinute1.setText(Integer.toString(digit));
+        if (digit<0) digit = 10+digit;
+        textViewMinuteOne.setText(Integer.toString(digit));
     }
 
-    @OnClick(R.id.buttonMinusMinute2)
+    @OnClick(R.id.buttonMinusMinuteTen)
     public void onButtonMinusMinute2Click() {
-        String digitStr = textViewMinute2.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit--;
-        if (digit<0) digit = 10+digit;
-        textViewMinute2.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonMinusSecond1)
-    public void onButtonMinusSecond1Click() {
-        String digitStr = textViewSecond1.getText().toString();
+        String digitStr = textViewMinuteTen.getText().toString();
         int digit = Integer.parseInt(digitStr);
         digit--;
         if (digit<0) digit = 6+digit;
-        textViewSecond1.setText(Integer.toString(digit));
+        textViewMinuteTen.setText(Integer.toString(digit));
     }
 
-    @OnClick(R.id.buttonMinusSecond2)
-    public void onButtonMinusSecond2Click() {
-        String digitStr = textViewSecond2.getText().toString();
+    @OnClick(R.id.buttonMinusSecondOne)
+    public void onButtonMinusSecond1Click() {
+        String digitStr = textViewSecondOne.getText().toString();
         int digit = Integer.parseInt(digitStr);
         digit--;
         if (digit<0) digit = 10+digit;
-        textViewSecond2.setText(Integer.toString(digit));
+        textViewSecondOne.setText(Integer.toString(digit));
+    }
+
+    @OnClick(R.id.buttonMinusSecondTen)
+    public void onButtonMinusSecond2Click() {
+        String digitStr = textViewSecondTen.getText().toString();
+        int digit = Integer.parseInt(digitStr);
+        digit--;
+        if (digit<0) digit = 6+digit;
+        textViewSecondTen.setText(Integer.toString(digit));
     }
 
     @OnClick(R.id.buttonStart)
     public void onButtonStartClick() {
-        String digitMinute1Str = textViewMinute1.getText().toString();
-        String digitMinute2Str = textViewMinute2.getText().toString();
-        String digitSecond1Str = textViewSecond1.getText().toString();
-        String digitSecond2Str = textViewSecond2.getText().toString();
-        int digitMinute1 = Integer.parseInt(digitMinute1Str);
-        int digitMinute2 = Integer.parseInt(digitMinute2Str);
-        int digitSecond1 = Integer.parseInt(digitSecond1Str);
-        int digitSecond2 = Integer.parseInt(digitSecond2Str);
+        String digitMinuteOneStr = textViewMinuteOne.getText().toString();
+        String digitMinuteTenStr = textViewMinuteTen.getText().toString();
+        String digitSecondOneStr = textViewSecondOne.getText().toString();
+        String digitSecondTenStr = textViewSecondTen.getText().toString();
+        int digitMinute1 = Integer.parseInt(digitMinuteOneStr);
+        int digitMinute2 = Integer.parseInt(digitMinuteTenStr);
+        int digitSecond1 = Integer.parseInt(digitSecondOneStr);
+        int digitSecond2 = Integer.parseInt(digitSecondTenStr);
 
         int totalSecondsNumber = countTotalSecondsNumber(digitMinute1,digitMinute2,digitSecond1,digitSecond2);
 
@@ -135,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                textViewMinute1.setText("");
+                textViewMinuteOne.setText("");
             }
         }.start();
     }
@@ -149,4 +146,8 @@ public class MainActivity extends AppCompatActivity {
         //textViewMinute1.setText(""+millisUntilFinished / 1000);
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }
