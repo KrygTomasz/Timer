@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.buttonStop) Button buttonStop;
 
     CountDownTimer counter;
+    Timer timer = new Timer(0,0,0,0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,82 +78,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     secondOne = -1;
                     break;
             }
-            addTime(minuteTen,minuteOne,secondTen,secondOne);
+            timer.addTime(minuteTen,minuteOne,secondTen,secondOne);
+            updateText();
         }
     };
 
-    private void addTime(int minuteTen, int minuteOne, int secondTen, int secondOne) {
-        String minuteTenStr = textViewMinuteTen.getText().toString();
-        String minuteOneStr = textViewMinuteOne.getText().toString();
-        String secondTenStr = textViewSecondTen.getText().toString();
-        String secondOneStr = textViewSecondOne.getText().toString();
-        int minuteTenDigit = Integer.parseInt(minuteTenStr);
-        int minuteOneDigit = Integer.parseInt(minuteOneStr);
-        int secondTenDigit = Integer.parseInt(secondTenStr);
-        int secondOneDigit = Integer.parseInt(secondOneStr);
-        int[] currentTime = {minuteTenDigit,minuteOneDigit,secondTenDigit,secondOneDigit};
-        int[] timeToAdd = {minuteTen, minuteOne, secondTen, secondOne};
-        for (int i = 0; i<currentTime.length; i++) {
-            currentTime[i] += timeToAdd[i];
-        }
-        currentTime = calculateModuloTime(currentTime);
-        textViewMinuteTen.setText(Integer.toString(currentTime[0]));
-        textViewMinuteOne.setText(Integer.toString(currentTime[1]));
-        textViewSecondTen.setText(Integer.toString(currentTime[2]));
-        textViewSecondOne.setText(Integer.toString(currentTime[3]));
-    }
-
-    private int[] calculateModuloTime(int[] time) {
-        if (time.length == 4) {
-            int[] calculatedTime = time;
-            calculatedTime[0] %= 6;
-            if (calculatedTime[0] < 0) calculatedTime[0] += 6;
-            calculatedTime[1] %= 10;
-            if (calculatedTime[1] < 0) calculatedTime[1] += 10;
-            calculatedTime[2] %= 6;
-            if (calculatedTime[2] < 0) calculatedTime[2] += 6;
-            calculatedTime[3] %= 10;
-            if (calculatedTime[3] < 0) calculatedTime[3] += 10;
-            return calculatedTime;
-        }
-        else {
-            return time;
-        }
-    }
+    private void updateText() {
+        String minuteTen = String.valueOf(timer.getmTime()[0]);
+        String minuteOne = String.valueOf(timer.getmTime()[1]);
+        String secondTen = String.valueOf(timer.getmTime()[2]);
+        String secondOne = String.valueOf(timer.getmTime()[3]);
+        textViewMinuteTen.setText(minuteTen);
+        textViewMinuteOne.setText(minuteOne);
+        textViewSecondTen.setText(secondTen);
+        textViewSecondOne.setText(secondOne);
+    };
 
     @OnClick(R.id.buttonStart)
     public void onButtonStartClick() {
-        String digitMinuteOneStr = textViewMinuteOne.getText().toString();
-        String digitMinuteTenStr = textViewMinuteTen.getText().toString();
-        String digitSecondOneStr = textViewSecondOne.getText().toString();
-        String digitSecondTenStr = textViewSecondTen.getText().toString();
-        int digitMinute1 = Integer.parseInt(digitMinuteOneStr);
-        int digitMinute2 = Integer.parseInt(digitMinuteTenStr);
-        int digitSecond1 = Integer.parseInt(digitSecondOneStr);
-        int digitSecond2 = Integer.parseInt(digitSecondTenStr);
+        int minuteTen = timer.getmTime()[0];
+        int minuteOne = timer.getmTime()[1];
+        int secondTen = timer.getmTime()[2];
+        int secondOne = timer.getmTime()[3];
+        int totalSecondsNumber = timer.getTotalSecondsNumber();
 
-        int totalSecondsNumber = countTotalSecondsNumber(digitMinute1,digitMinute2,digitSecond1,digitSecond2);
-
-        counter = new CountDownTimer(totalSecondsNumber, 1000) {
+        counter = new CountDownTimer(totalSecondsNumber*1000, 1000) {
             String tempSecondStr;
             int tempSecond;
             public void onTick(long millisUntilFinished) {
-                setMainTimerTextViews((int)millisUntilFinished/1000);
+                millisUntilFinished/=1000;
+                timer.countDownTime();
+                updateText();
             }
 
             public void onFinish() {
                 textViewMinuteOne.setText("");
+                setEnabledPlusMinusButtons(true);
             }
         }.start();
+
+        setEnabledPlusMinusButtons(false);
     }
 
-    private int countTotalSecondsNumber(int digitMinute1, int digitMinute2, int digitSecond1, int digitSecond2) {
-        return digitMinute1*10*60 + digitMinute2*60 + digitSecond1*10 + digitSecond2;
-    }
-
-    private void setMainTimerTextViews(int seconds) {
-
-        //textViewMinute1.setText(""+millisUntilFinished / 1000);
+    private void setEnabledPlusMinusButtons(boolean enabled) {
+        buttonPlusMinuteTen.setEnabled(enabled);
+        buttonPlusMinuteOne.setEnabled(enabled);
+        buttonPlusSecondTen.setEnabled(enabled);
+        buttonPlusSecondOne.setEnabled(enabled);
+        buttonMinusMinuteTen.setEnabled(enabled);
+        buttonMinusMinuteOne.setEnabled(enabled);
+        buttonMinusSecondTen.setEnabled(enabled);
+        buttonMinusSecondOne.setEnabled(enabled);
     }
 
     @Override
