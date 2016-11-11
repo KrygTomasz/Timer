@@ -37,78 +37,87 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+        buttonPlusMinuteTen.setOnClickListener(click);
+        buttonPlusMinuteOne.setOnClickListener(click);
+        buttonPlusSecondTen.setOnClickListener(click);
+        buttonPlusSecondOne.setOnClickListener(click);
+        buttonMinusMinuteTen.setOnClickListener(click);
+        buttonMinusMinuteOne.setOnClickListener(click);
+        buttonMinusSecondTen.setOnClickListener(click);
+        buttonMinusSecondOne.setOnClickListener(click);
     }
 
-    @OnClick(R.id.buttonPlusMinuteOne)
-    public void onButtonPlusMinute1Click() {
-        String digitStr = textViewMinuteOne.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit++;
-        digit%=10;
-        textViewMinuteOne.setText(Integer.toString(digit));
+    private View.OnClickListener click = new View.OnClickListener() {
+        public void onClick(View v) {
+            int minuteTen = 0, minuteOne = 0, secondTen = 0, secondOne = 0;
+            switch (v.getId()){
+                case R.id.buttonPlusMinuteTen:
+                    minuteTen = 1;
+                    break;
+                case R.id.buttonPlusMinuteOne:
+                    minuteOne = 1;
+                    break;
+                case R.id.buttonPlusSecondTen:
+                    secondTen = 1;
+                    break;
+                case R.id.buttonPlusSecondOne:
+                    secondOne = 1;
+                    break;
+                case R.id.buttonMinusMinuteTen:
+                    minuteTen = -1;
+                    break;
+                case R.id.buttonMinusMinuteOne:
+                    minuteOne = -1;
+                    break;
+                case R.id.buttonMinusSecondTen:
+                    secondTen = -1;
+                    break;
+                case R.id.buttonMinusSecondOne:
+                    secondOne = -1;
+                    break;
+            }
+            addTime(minuteTen,minuteOne,secondTen,secondOne);
+        }
+    };
+
+    private void addTime(int minuteTen, int minuteOne, int secondTen, int secondOne) {
+        String minuteTenStr = textViewMinuteTen.getText().toString();
+        String minuteOneStr = textViewMinuteOne.getText().toString();
+        String secondTenStr = textViewSecondTen.getText().toString();
+        String secondOneStr = textViewSecondOne.getText().toString();
+        int minuteTenDigit = Integer.parseInt(minuteTenStr);
+        int minuteOneDigit = Integer.parseInt(minuteOneStr);
+        int secondTenDigit = Integer.parseInt(secondTenStr);
+        int secondOneDigit = Integer.parseInt(secondOneStr);
+        int[] currentTime = {minuteTenDigit,minuteOneDigit,secondTenDigit,secondOneDigit};
+        int[] timeToAdd = {minuteTen, minuteOne, secondTen, secondOne};
+        for (int i = 0; i<currentTime.length; i++) {
+            currentTime[i] += timeToAdd[i];
+        }
+        currentTime = calculateModuloTime(currentTime);
+        textViewMinuteTen.setText(Integer.toString(currentTime[0]));
+        textViewMinuteOne.setText(Integer.toString(currentTime[1]));
+        textViewSecondTen.setText(Integer.toString(currentTime[2]));
+        textViewSecondOne.setText(Integer.toString(currentTime[3]));
     }
 
-    @OnClick(R.id.buttonPlusMinuteTen)
-    public void onButtonPlusMinute2Click() {
-        String digitStr = textViewMinuteTen.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit++;
-        digit%=6;
-        textViewMinuteTen.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonPlusSecondOne)
-    public void onButtonPlusSecond1Click() {
-        String digitStr = textViewSecondOne.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit++;
-        digit%=10;
-        textViewSecondOne.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonPlusSecondTen)
-    public void onButtonPlusSecond2Click() {
-        String digitStr = textViewSecondTen.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit++;
-        digit%=6;
-        textViewSecondTen.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonMinusMinuteOne)
-    public void onButtonMinusMinute1Click() {
-        String digitStr = textViewMinuteOne.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit--;
-        if (digit<0) digit = 10+digit;
-        textViewMinuteOne.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonMinusMinuteTen)
-    public void onButtonMinusMinute2Click() {
-        String digitStr = textViewMinuteTen.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit--;
-        if (digit<0) digit = 6+digit;
-        textViewMinuteTen.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonMinusSecondOne)
-    public void onButtonMinusSecond1Click() {
-        String digitStr = textViewSecondOne.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit--;
-        if (digit<0) digit = 10+digit;
-        textViewSecondOne.setText(Integer.toString(digit));
-    }
-
-    @OnClick(R.id.buttonMinusSecondTen)
-    public void onButtonMinusSecond2Click() {
-        String digitStr = textViewSecondTen.getText().toString();
-        int digit = Integer.parseInt(digitStr);
-        digit--;
-        if (digit<0) digit = 6+digit;
-        textViewSecondTen.setText(Integer.toString(digit));
+    private int[] calculateModuloTime(int[] time) {
+        if (time.length == 4) {
+            int[] calculatedTime = time;
+            calculatedTime[0] %= 6;
+            if (calculatedTime[0] < 0) calculatedTime[0] += 6;
+            calculatedTime[1] %= 10;
+            if (calculatedTime[1] < 0) calculatedTime[1] += 10;
+            calculatedTime[2] %= 6;
+            if (calculatedTime[2] < 0) calculatedTime[2] += 6;
+            calculatedTime[3] %= 10;
+            if (calculatedTime[3] < 0) calculatedTime[3] += 10;
+            return calculatedTime;
+        }
+        else {
+            return time;
+        }
     }
 
     @OnClick(R.id.buttonStart)
