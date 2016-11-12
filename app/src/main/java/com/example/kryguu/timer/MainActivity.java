@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.buttonPause) Button buttonPause;
     @BindView(R.id.buttonStop) Button buttonStop;
 
-    //CountDownTimer counter;
     CustomCountDownTimer counter;
     Timer timer = new Timer(0,0,0,0);
     boolean countDownEnabled = false;
+    List<Button> buttonsPlusMinusTable = new ArrayList<Button>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        buttonPlusMinuteTen.setOnClickListener(click);
-        buttonPlusMinuteOne.setOnClickListener(click);
-        buttonPlusSecondTen.setOnClickListener(click);
-        buttonPlusSecondOne.setOnClickListener(click);
-        buttonMinusMinuteTen.setOnClickListener(click);
-        buttonMinusMinuteOne.setOnClickListener(click);
-        buttonMinusSecondTen.setOnClickListener(click);
-        buttonMinusSecondOne.setOnClickListener(click);
+        initUIComponents();
+    }
+
+    private void initUIComponents() {
+        buttonsPlusMinusTable.add(buttonPlusMinuteTen);
+        buttonsPlusMinusTable.add(buttonPlusMinuteOne);
+        buttonsPlusMinusTable.add(buttonPlusSecondTen);
+        buttonsPlusMinusTable.add(buttonPlusSecondOne);
+        buttonsPlusMinusTable.add(buttonMinusMinuteTen);
+        buttonsPlusMinusTable.add(buttonMinusMinuteOne);
+        buttonsPlusMinusTable.add(buttonMinusSecondTen);
+        buttonsPlusMinusTable.add(buttonMinusSecondOne);
+        for (Button button: buttonsPlusMinusTable) {
+            button.setOnClickListener(click);
+        }
     }
 
     private View.OnClickListener click = new View.OnClickListener() {
@@ -116,14 +126,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setEnabledPlusMinusButtons(boolean enabled) {
-        buttonPlusMinuteTen.setEnabled(enabled);
-        buttonPlusMinuteOne.setEnabled(enabled);
-        buttonPlusSecondTen.setEnabled(enabled);
-        buttonPlusSecondOne.setEnabled(enabled);
-        buttonMinusMinuteTen.setEnabled(enabled);
-        buttonMinusMinuteOne.setEnabled(enabled);
-        buttonMinusSecondTen.setEnabled(enabled);
-        buttonMinusSecondOne.setEnabled(enabled);
+        for (Button button: buttonsPlusMinusTable) {
+            button.setEnabled(enabled);
+        }
     }
 
     @OnClick(R.id.buttonStop)

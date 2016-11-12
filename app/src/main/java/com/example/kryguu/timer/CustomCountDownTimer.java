@@ -31,5 +31,7 @@ public class CustomCountDownTimer extends CountDownTimer {
     public void onFinish() {
         onTick(1000);
         mContext.setCountDownEnabled(false);
+        AlarmAlertDialog a = new AlarmAlertDialog(mContext);
+        a.show();
     }
 }
