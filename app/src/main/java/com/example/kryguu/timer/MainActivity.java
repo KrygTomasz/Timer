@@ -11,7 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.textViewMinuteOne) TextView textViewMinuteOne;
     @BindView(R.id.textViewMinuteTen) TextView textViewMinuteTen;
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     CountDownTimer counter;
     Timer timer = new Timer(0,0,0,0);
+    boolean countDownEnabled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,28 +97,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @OnClick(R.id.buttonStart)
     public void onButtonStartClick() {
-        int minuteTen = timer.getmTime()[0];
-        int minuteOne = timer.getmTime()[1];
-        int secondTen = timer.getmTime()[2];
-        int secondOne = timer.getmTime()[3];
-        int totalSecondsNumber = timer.getTotalSecondsNumber();
+        if (countDownEnabled == false) {
+            setCountDownEnabled(true);
+        }
+    }
 
-        counter = new CountDownTimer(totalSecondsNumber*1000, 1000) {
-            String tempSecondStr;
-            int tempSecond;
-            public void onTick(long millisUntilFinished) {
-                millisUntilFinished/=1000;
-                timer.countDownTime();
-                updateText();
-            }
+    private void setCountDownEnabled(boolean enabled) {
+        countDownEnabled = enabled;
+        setEnabledPlusMinusButtons(enabled == false);
+        if (enabled) {
+            int totalSecondsNumber = timer.getTotalSecondsNumber();
+            counter = new CountDownTimer(totalSecondsNumber * 1000, 1000) {
 
-            public void onFinish() {
-                textViewMinuteOne.setText("");
-                setEnabledPlusMinusButtons(true);
-            }
-        }.start();
+                public void onTick(long millisUntilFinished) {
+                    millisUntilFinished /= 1000;
+                    timer.countDownTime();
+                    updateText();
+                }
 
-        setEnabledPlusMinusButtons(false);
+                public void onFinish() {
+                    onTick(1000);
+
+                    setCountDownEnabled(false);
+                }
+            }.start();
+        }
+        else {
+            counter.cancel();
+            timer.setmTime(0, 0, 0, 0);
+            updateText();
+        }
     }
 
     private void setEnabledPlusMinusButtons(boolean enabled) {
@@ -131,8 +140,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMinusSecondOne.setEnabled(enabled);
     }
 
-    @Override
-    public void onClick(View view) {
-
+    @OnClick(R.id.buttonStop)
+    public void onButtonStopClick() {
+        if (countDownEnabled) {
+            setCountDownEnabled(false);
+        }
     }
 }

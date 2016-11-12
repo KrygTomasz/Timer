@@ -5,7 +5,7 @@ package com.example.kryguu.timer;
  */
 
 public class Timer {
-    private int[] mTime;
+    private int[] mTime = {0, 0, 0, 0};
     public Timer(int minuteTen, int minuteOne, int secondTen, int secondOne) {
         mTime = new int[]{minuteTen, minuteOne, secondTen, secondOne};
     }
@@ -14,8 +14,8 @@ public class Timer {
         return mTime;
     }
 
-    public void setmTime(int[] mTime) {
-        this.mTime = mTime;
+    public void setmTime(int minuteTen, int minuteOne, int secondTen, int secondOne) {
+        this.mTime = new int[]{minuteTen, minuteOne, secondTen, secondOne};
     }
 
     public void addTime(int minuteTen, int minuteOne, int secondTen, int secondOne) {
@@ -50,7 +50,7 @@ public class Timer {
                 if (mTime[1] == 9) {
                     addTime(-1,0,0,0);
                     if (mTime[0] == 5) {
-                        setmTime(new int[]{0, 0, 0, 0});
+                        setmTime(0,0,0,0);
                     }
                 }
             }
