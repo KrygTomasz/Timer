@@ -1,6 +1,5 @@
 package com.example.kryguu.timer;
 
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.buttonPause) Button buttonPause;
     @BindView(R.id.buttonStop) Button buttonStop;
 
-    CountDownTimer counter;
+    //CountDownTimer counter;
+    CustomCountDownTimer counter;
     Timer timer = new Timer(0,0,0,0);
     boolean countDownEnabled = false;
 
@@ -80,11 +80,11 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             timer.addTime(minuteTen,minuteOne,secondTen,secondOne);
-            updateText();
+            updateTextViews();
         }
     };
 
-    private void updateText() {
+    public void updateTextViews() {
         String minuteTen = String.valueOf(timer.getmTime()[0]);
         String minuteOne = String.valueOf(timer.getmTime()[1]);
         String secondTen = String.valueOf(timer.getmTime()[2]);
@@ -102,34 +102,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void setCountDownEnabled(boolean enabled) {
+    public void setCountDownEnabled(boolean enabled) {
         countDownEnabled = enabled;
         setEnabledPlusMinusButtons(enabled == false);
+
         if (enabled) {
-            int totalSecondsNumber = timer.getTotalSecondsNumber();
-            counter = new CountDownTimer(totalSecondsNumber * 1000, 1000) {
-
-                public void onTick(long millisUntilFinished) {
-                    millisUntilFinished /= 1000;
-                    timer.countDownTime();
-                    updateText();
-                }
-
-                public void onFinish() {
-                    onTick(1000);
-
-                    setCountDownEnabled(false);
-                }
-            }.start();
+            counter = new CustomCountDownTimer(MainActivity.this, timer);
+            counter.start();
         }
         else {
             counter.cancel();
-            timer.setmTime(0, 0, 0, 0);
-            updateText();
         }
     }
 
-    private void setEnabledPlusMinusButtons(boolean enabled) {
+    public void setEnabledPlusMinusButtons(boolean enabled) {
         buttonPlusMinuteTen.setEnabled(enabled);
         buttonPlusMinuteOne.setEnabled(enabled);
         buttonPlusSecondTen.setEnabled(enabled);
@@ -142,6 +128,13 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonStop)
     public void onButtonStopClick() {
+        setCountDownEnabled(false);
+        timer.setmTime(0, 0, 0, 0);
+        updateTextViews();
+    }
+
+    @OnClick(R.id.buttonPause)
+    public void onButtonPauseClick() {
         if (countDownEnabled) {
             setCountDownEnabled(false);
         }
