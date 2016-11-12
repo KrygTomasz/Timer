@@ -29,9 +29,10 @@ public class CustomCountDownTimer extends CountDownTimer {
 
     @Override
     public void onFinish() {
-        onTick(1000);
-        mContext.setCountDownEnabled(false);
+        mTimer.countDownTime();
+        mContext.updateTextViews();
         AlarmAlertDialog a = new AlarmAlertDialog(mContext);
         a.show();
+        mContext.setCountDownEnabled(false);
     }
 }

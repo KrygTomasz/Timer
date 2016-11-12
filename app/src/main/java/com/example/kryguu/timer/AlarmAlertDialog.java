@@ -12,19 +12,19 @@ import android.media.MediaPlayer;
 
 public class AlarmAlertDialog extends AlertDialog.Builder {
     Context mContext;
-    MediaPlayer mediaPlayer;
+    MediaPlayer mAlarm;
     public AlarmAlertDialog(Context context) {
         super(context);
         mContext = context;
-        mediaPlayer = MediaPlayer.create(mContext, R.raw.alarm);
-        mediaPlayer.start();
-        mediaPlayer.setLooping(true);
+        mAlarm = MediaPlayer.create(mContext, R.raw.alarm);
+        mAlarm.start();
+        mAlarm.setLooping(true);
         this.setTitle(R.string.alert_dialog_title);
         this.setIcon(R.drawable.ic_clock);
         this.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialogInterface) {
-                mediaPlayer.stop();
+                mAlarm.stop();
             }
         });
     }

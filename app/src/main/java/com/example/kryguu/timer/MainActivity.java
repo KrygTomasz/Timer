@@ -1,5 +1,6 @@
 package com.example.kryguu.timer;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     CustomCountDownTimer counter = new CustomCountDownTimer(MainActivity.this, timer);
     boolean countDownEnabled = false;
     List<Button> buttonsPlusMinusTable = new ArrayList<Button>();
+    MediaPlayer mClickSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         for (Button button: buttonsPlusMinusTable) {
             button.setOnClickListener(click);
         }
+        mClickSound = MediaPlayer.create(this, R.raw.click);
     }
 
     private View.OnClickListener click = new View.OnClickListener() {
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     secondOne = -1;
                     break;
             }
+            mClickSound.start();
             timer.addTime(minuteTen,minuteOne,secondTen,secondOne);
             updateTextViews();
         }
@@ -110,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         if (countDownEnabled == false) {
             setCountDownEnabled(true);
         }
+        mClickSound.start();
     }
 
     public void setCountDownEnabled(boolean enabled) {
@@ -136,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         setCountDownEnabled(false);
         timer.setmTime(0, 0, 0, 0);
         updateTextViews();
+        mClickSound.start();
     }
 
     @OnClick(R.id.buttonPause)
@@ -143,5 +149,6 @@ public class MainActivity extends AppCompatActivity {
         if (countDownEnabled) {
             setCountDownEnabled(false);
         }
+        mClickSound.start();
     }
 }
