@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.buttonPause) Button buttonPause;
     @BindView(R.id.buttonStop) Button buttonStop;
 
-    CustomCountDownTimer counter;
     Timer timer = new Timer(0,0,0,0);
+    CustomCountDownTimer counter = new CustomCountDownTimer(MainActivity.this, timer);
     boolean countDownEnabled = false;
     List<Button> buttonsPlusMinusTable = new ArrayList<Button>();
 
