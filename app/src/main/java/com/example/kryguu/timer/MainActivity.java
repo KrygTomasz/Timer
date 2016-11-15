@@ -1,5 +1,6 @@
 package com.example.kryguu.timer;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.buttonPause) Button buttonPause;
     @BindView(R.id.buttonStop) Button buttonStop;
 
+    public final static String MINUTETENCOUNT = "minuteTenCount";
+    public final static String MINUTEONECOUNT = "minuteOneCount";
+    public final static String SECONDTENCOUNT = "secondTenCount";
+    public final static String SECONDONECOUNT = "secondOneCount";
+    public final static String ENABLED = "enabled";
+
     Timer timer = new Timer(0,0,0,0);
     CustomCountDownTimer counter = new CustomCountDownTimer(MainActivity.this, timer);
     boolean countDownEnabled = false;
@@ -46,6 +53,33 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         initUIComponents();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle bundle) {
+        bundle.putInt(MINUTETENCOUNT, Integer.parseInt(textViewMinuteTen.getText().toString()));
+        bundle.putInt(MINUTEONECOUNT, Integer.parseInt(textViewMinuteOne.getText().toString()));
+        bundle.putInt(SECONDTENCOUNT, Integer.parseInt(textViewSecondTen.getText().toString()));
+        bundle.putInt(SECONDONECOUNT, Integer.parseInt(textViewSecondOne.getText().toString()));
+        bundle.putBoolean(ENABLED, countDownEnabled);
+        super.onSaveInstanceState(bundle);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle bundle) {
+        int minuteTen = bundle.getInt(MINUTETENCOUNT);
+        int minuteOne = bundle.getInt(MINUTEONECOUNT);
+        int secondTen = bundle.getInt(SECONDTENCOUNT);
+        int secondOne = bundle.getInt(SECONDONECOUNT);
+        boolean enabled = bundle.getBoolean(ENABLED);
+        textViewMinuteTen.setText(String.valueOf(minuteTen));
+        textViewMinuteOne.setText(String.valueOf(minuteOne));
+        textViewSecondTen.setText(String.valueOf(secondTen));
+        textViewSecondOne.setText(String.valueOf(secondOne));
+        timer.setmTime(minuteTen, minuteOne, secondTen, secondOne);
+        countDownEnabled = enabled;
+        setEnabledPlusMinusButtons(enabled == false);
+        counter.setmContext(MainActivity.this);
     }
 
     private void initUIComponents() {

@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="ac5c47ed4fab1b1e72eb6eff8d94986011ef2ba2">
+        sha1="b504c50f479e30f1600ce46ee8fc3ce25a8c4cb5">
         <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_13aa889b34b38069ffe934d2728f87a6a7a3d606.jar" />
     </item>
     <item
@@ -169,7 +169,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="ce9be7c7b85cd21a6559206376ab7b57f138a9d6">
+        sha1="f498229f3a6f427d149cd6c9c60c8c788428dfaf">
         <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/instant-run_4164c8554bf8d430c14c1e78d5446decdfa1b867.jar" />
     </item>
     <item

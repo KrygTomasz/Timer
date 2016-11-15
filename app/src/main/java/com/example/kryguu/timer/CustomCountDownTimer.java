@@ -33,4 +33,12 @@ public class CustomCountDownTimer extends CountDownTimer {
         a.show();
         mContext.setCountDownEnabled(false);
     }
+
+    public void setmContext(MainActivity mContext) {
+        this.mContext = mContext;
+    }
+
+    public void setmTimer(Timer mTimer) {
+        this.mTimer = mTimer;
+    }
 }
