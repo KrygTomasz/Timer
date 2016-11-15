@@ -4,4 +4,5 @@
     <string name="pause">Pause</string>
     <string name="stop">Stop</string>
     <string name="alert_dialog_title">Ring Ring...</string>
+    <string name="text_size">60dp</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.kryguu.timer;
 
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 
 /**
@@ -10,11 +11,9 @@ public class CustomCountDownTimer extends CountDownTimer {
 
     private MainActivity mContext;
     private Timer mTimer;
-    private long mTotalSecondsNumber;
 
     public CustomCountDownTimer(MainActivity context, Timer timer) {
         super(timer.getTotalSecondsNumber() * 1000, 1000);
-        mTotalSecondsNumber = timer.getTotalSecondsNumber();
         mContext = context;
         mTimer = timer;
     }
@@ -22,7 +21,6 @@ public class CustomCountDownTimer extends CountDownTimer {
     @Override
     public void onTick(long millisUntilFinished) {
         millisUntilFinished /= 1000;
-        mTotalSecondsNumber = millisUntilFinished;
         mTimer.countDownTime();
         mContext.updateTextViews();
     }

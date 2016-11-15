@@ -31,7 +31,8 @@
             android:layout_height="40dp"
             android:id="@+id/buttonPlusMinuteOne"
             android:minHeight="0dp"
-            android:minWidth="0dp" />
+            android:minWidth="0dp"
+            android:layout_marginRight="7dp"/>
 
 
         <Button
@@ -40,7 +41,8 @@
             android:layout_height="40dp"
             android:id="@+id/buttonPlusSecondTen"
             android:minHeight="0dp"
-            android:minWidth="0dp" />
+            android:minWidth="0dp"
+            android:layout_marginLeft="7dp"/>
 
         <Button
             android:text="+"
@@ -59,35 +61,37 @@
 
         <TextView
             android:text="0"
-            android:textSize="60dp"
+            android:textSize="@string/text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewMinuteTen" />
 
         <TextView
             android:text="0"
-            android:textSize="60dp"
+            android:textSize="@string/text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textViewMinuteOne" />
+            android:id="@+id/textViewMinuteOne"
+            android:layout_marginRight="5dp"/>
 
         <TextView
             android:text=":"
-            android:textSize="60dp"
+            android:textSize="@string/text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/colon" />
 
         <TextView
             android:text="0"
-            android:textSize="60dp"
+            android:textSize="@string/text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textViewSecondTen" />
+            android:id="@+id/textViewSecondTen"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
             android:text="0"
-            android:textSize="60dp"
+            android:textSize="@string/text_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewSecondOne"/>
@@ -113,7 +117,8 @@
             android:layout_height="40dp"
             android:id="@+id/buttonMinusMinuteOne"
             android:minHeight="0dp"
-            android:minWidth="0dp" />
+            android:minWidth="0dp"
+            android:layout_marginRight="7dp"/>
 
         <Button
             android:text="-"
@@ -121,7 +126,8 @@
             android:layout_height="40dp"
             android:id="@+id/buttonMinusSecondTen"
             android:minHeight="0dp"
-            android:minWidth="0dp" />
+            android:minWidth="0dp"
+            android:layout_marginLeft="7dp"/>
 
         <Button
             android:text="-"
@@ -132,14 +138,11 @@
             android:minWidth="0dp" />
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="70dp"
-        android:layout_alignParentStart="true">
+        android:layout_marginTop="0dp">
 
         <Button
             android:text="@string/start"
