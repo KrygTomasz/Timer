@@ -3,21 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        jar="/Users/kryguu/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.4.0/ea392375cf9ff59234a82e7928a204215ccc98cd/butterknife-annotations-8.4.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="ce9be7c7b85cd21a6559206376ab7b57f138a9d6">
-        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/instant-run_4164c8554bf8d430c14c1e78d5446decdfa1b867.jar" />
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.4.0_1f61d89c29d9cd6b3717801af3bde16f56bdc9f7.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_ee33ccf046a3eb3ecf9fe3429afdd1d81a8b74b3.jar" />
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.0_1fa9c9d67fd3af6f7f572f0fa92b3289ffe9587c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -36,6 +36,159 @@
         revision="25.0.0"
         sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
         <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_6bcf33e6836826baa621d66bbdf19a6dff5274e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_c1afd88e6251aec3cfbe9654ae22638c38c0a5e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.0_4c9e279e7aef1c2c46074f2d7d059b83340ee664.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ac5c47ed4fab1b1e72eb6eff8d94986011ef2ba2">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_13aa889b34b38069ffe934d2728f87a6a7a3d606.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_5109ce1bf8e3ef053f29c78b817beac78263e728.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.jakewharton-butterknife-8.4.0_2b58755e7b561e0f9fc7caba67a2313ae86f5d9a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_deac871efc6e48327d3f576f85896eec5c395af2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_9e831610a899b1d9d2ccbcc080f4d0eb3fdc991d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_3d931b633bdaf1cc6188bc213596977666b37ac3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_bcd83c589635b07d0320704a8ac0dcb60aeb594d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.0_4a8b4f207565e2dab37c2c7b920c33c259f7a5bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_e711544ebc56cfdc2c47f256085a3dadf0073c58.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_60b894d1eacc64f4b8bc85dd33545802276d19b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_7ac9ad409899bc9829837a6b17249e0f15ba8828.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_21bdaba00dd134649b2236e48349c792dde2da3d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ce9be7c7b85cd21a6559206376ab7b57f138a9d6">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/instant-run_4164c8554bf8d430c14c1e78d5446decdfa1b867.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_ee33ccf046a3eb3ecf9fe3429afdd1d81a8b74b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_c1afd88e6251aec3cfbe9654ae22638c38c0a5e4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,12 +228,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="true"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_c1afd88e6251aec3cfbe9654ae22638c38c0a5e4.jar" />
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_6bcf33e6836826baa621d66bbdf19a6dff5274e4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,12 +246,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        jar="/Users/kryguu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="ac5c47ed4fab1b1e72eb6eff8d94986011ef2ba2">
-        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_13aa889b34b38069ffe934d2728f87a6a7a3d606.jar" />
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_60b894d1eacc64f4b8bc85dd33545802276d19b0.jar" />
     </item>
     <item
         is-multidex="false"
@@ -130,7 +283,7 @@
     <item
         is-multidex="false"
         jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
@@ -138,12 +291,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/kryguu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
-        jumboMode="true"
+        jar="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_60b894d1eacc64f4b8bc85dd33545802276d19b0.jar" />
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/kryguu/AndroidStudioProjects/Timer/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_ee33ccf046a3eb3ecf9fe3429afdd1d81a8b74b3.jar" />
     </item>
     <item
         is-multidex="false"
