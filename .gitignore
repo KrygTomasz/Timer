@@ -48,4 +48,8 @@ captures/
 ### Android Patch ###
 gen-external-apklibs
 
+<<<<<<< Updated upstream
 .DS_Store
+=======
+.DS_Store
+>>>>>>> Stashed changes
